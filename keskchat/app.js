@@ -25,7 +25,14 @@ io.on('connection', function(socket) {
   socket.on('message', (data) =>{
     //will call the chat-message in the scripts.js
     socket.broadcast.emit('chat-message', data);
-  })
+  });
+
+  //need to emit so it shows up for all users
+  socket.on('feedback', (data) =>{
+    //will change the user typing message
+    socket.broadcast.emit('feedback', data);
+  });
+
 });
 
 // view engine setup
