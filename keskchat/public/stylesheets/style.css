@@ -6,7 +6,12 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #efeffa;
+  /* background-color: #efeffa; */
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image:  radial-gradient(#444cf7 1.1px, transparent 1.1px), radial-gradient(#444cf7 1.1px, #e5e5f7 1.1px);
+  background-size: 44px 44px;
+  background-position: 0 0,22px 22px;
 }
 
 p, li, ul{
