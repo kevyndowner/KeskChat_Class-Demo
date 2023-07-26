@@ -91,6 +91,17 @@ p, li, ul{
   width: auto;
 }
 
+.message-name{
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.user-typing{
+  padding: 15px;
+  font-style: italic;
+  text-align: center;
+}
+
 .message-input{
   flex-grow: 1;
   height: 48px;
