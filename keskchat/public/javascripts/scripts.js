@@ -12,7 +12,7 @@ const nameInput = document.getElementById('name-input');
 const messageForm = document.getElementById('message-form');
 const messageInput = document.getElementById('message-input');
 const messageName = document.getElementById('message-name');
-
+const nameBtn = document.getElementById('save-name');
 
 //creating an event on the submit button
 messageForm.addEventListener('submit', (event) =>
@@ -93,7 +93,7 @@ messageInput.addEventListener('blur', (event)=>{
     })
 });
 
-//recieving the feeback message
+//receiving the feedback message
 socket.on('feedback', (data) =>
 {
     clearUserTyping();
@@ -106,4 +106,14 @@ function clearUserTyping(){
     document.querySelectorAll('li.user-typing').forEach(element => {
         element.parentNode.removeChild(element);
     });
+};
+
+//disabling name input once a chat name have been entered
+nameBtn.addEventListener('click', (event) =>
+{
+    saveChatName();
+});
+
+function saveChatName() {
+    nameInput.disabled = true;
 }
