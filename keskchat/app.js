@@ -12,14 +12,23 @@ var io = require('./socket');
 
 var app = express();
 
+//for storing number of socket id and count number of users connected
+var socketConnectedCounts = new Set()
+
 //The functions for displaying connections and messages
 io.on('connection', function(socket) {
   //socket.id is a randomly generated hash for a user
   console.log('User ' + socket.id + " connected!");
+  socketConnectedCounts.add(socket.id);
+  io.emit('user-counts', socketConnectedCounts.size);
+  console.log(socketConnectedCounts.size);
 
   //Whenever someone disconnects this piece of code executed
   socket.on('disconnect', function () {
     console.log('User ' + socket.id + " disconnected");
+    socketConnectedCounts.delete(socket.id);
+    io.emit('user-counts', socketConnectedCounts.size);
+    console.log(socketConnectedCounts.size);
   });
 
   socket.on('message', (data) =>{

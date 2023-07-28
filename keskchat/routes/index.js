@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 /* GET chat room page. */
 router.get('/chat', function(req, res, next) {
-  res.render('index', { title: 'Chat Room 1' });
+  res.render('index', { title: 'Chat Room' });
 });
 
 module.exports = router;

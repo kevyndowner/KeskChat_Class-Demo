@@ -13,6 +13,7 @@ const messageForm = document.getElementById('message-form');
 const messageInput = document.getElementById('message-input');
 const messageName = document.getElementById('message-name');
 const nameBtn = document.getElementById('save-name');
+const totalUsers = document.getElementById('counts');
 
 //creating an event on the submit button
 messageForm.addEventListener('submit', (event) =>
@@ -45,7 +46,12 @@ function sendMessage()
     
 }
 
-//will call the addMessage on message recieved
+// showing number of users in chat room
+socket.on('user-counts', (data) => {
+    totalUsers.textContent = data
+})
+
+//will call the addMessage on message received
 socket.on('chat-message', (data) =>
 {
     addMessage(false, data);
