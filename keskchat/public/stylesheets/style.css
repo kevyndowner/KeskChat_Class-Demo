@@ -151,21 +151,11 @@ p, li, ul{
   border-radius: 10px;
 }
 
-.exit-chat{
-  height: 30px;
-}
-
 .save-name:hover{
   background-color: rgb(89, 111, 233);
   color: white;
 }
 
-.exit-chat:hover{
-  background-color: goldenrod;
-  color: white;
-}
-
-.user-count, .counts{
-  font-weight: bold;
+.counts{
   font-style: italic;
 }
