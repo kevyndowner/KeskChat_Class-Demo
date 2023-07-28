@@ -24,9 +24,14 @@ p, li, ul{
   font-weight: bold;
 }
 
-.main{
+.main, .aside{
   border: 8px solid #dddded;
   border-radius: 20px;
+}
+
+.aside{
+  padding: 15px;
+  background-color: #efeffa;
 }
 
 .name{

@@ -1,21 +1,27 @@
     <h1 class="title">{{title}}</h1>
-    <div class="main">
-        <div class="name">
-            <input type="text" id="name-input" class="name-input" placeholder="enter name">
-            <div class="pt-2">
-                <button type="button" class="save-name" id="save-name">Save Chat Name</button>
+    <div class="row">
+        <div class="col">
+            <div class="main">
+                <div class="name">
+                    <input type="text" id="name-input" class="name-input" placeholder="Enter name want to display in chat">
+                    <div class="pt-2">
+                        <button type="button" class="save-name" id="save-name">Save Chat Name</button>
+                    </div>
+                </div>
+                <ul class="message-container" id="message-container">
+                </ul>
+
+                <form class="message-form" id="message-form">
+                    <input type="text" name="message" id="message-input" class="message-input">
+                    <button type="submit" class="send-button">Send</button>
+                </form>
             </div>
         </div>
-        <ul class="message-container" id="message-container">
-        </ul>
-
-        <form class="message-form" id="message-form">
-            <input type="text" name="message" id="message-input" class="message-input">
-            <button type="submit" class="send-button">Send</button>
-        </form>
+    <div class="col">
+        <div class="aside">
+            <p class="user-count">Total users in chat: <span class="counts" id="counts">0</span></p>
+            <a class="btn btn-outline-warning px-5" href="/" role="button">Leave Chat</a>    
+        </div>
     </div>
-    <div class="aside">
-        <p class="user-count">Total users in chat: <span class="counts" id="counts">0</span></p>
-        <a class="btn btn-outline-warning px-5" href="/" role="button">Leave Chat</a>    
     </div>
 </body>
