@@ -76,43 +76,6 @@ function addMessage(isSender, data)
 
 }
 
-//Modified design for user is typing from: https://www.youtube.com/watch?v=gZvpCiPIzW0&list=PLdHg5T0SNpN09AlLBAYahKZUrAWsIL7No&index=7
-
-//adding an event listener to the input field to detect if the user is typing
-messageInput.addEventListener('focus', (event)=>{
-    socket.emit('feedback', {
-        feedback: nameInput.value + " is typing a message...",
-    })
-});
-
-messageInput.addEventListener('click', (event)=>{
-    socket.emit('feedback', {
-        feedback: nameInput.value + " is typing a message...",
-    })
-});
-
-
-//adding an event listener to the input field when the user un focuses
-messageInput.addEventListener('blur', (event)=>{
-    socket.emit('feedback', {
-        feedback: "",
-    })
-});
-
-//receiving the feedback message
-socket.on('feedback', (data) =>
-{
-    clearUserTyping();
-    var element = '<li class="user-typing"><p>' + data.feedback + '</p></li>';
-    messageContainer.innerHTML += element;
-});
-
-//this function will remove all user typing
-function clearUserTyping(){
-    document.querySelectorAll('li.user-typing').forEach(element => {
-        element.parentNode.removeChild(element);
-    });
-};
 
 //disabling name input once a chat name have been entered
 nameBtn.addEventListener('click', (event) =>
